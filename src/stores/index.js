@@ -7,7 +7,7 @@ export const useStore = defineStore('store', {
             component: 'App',
             app: {
                 backendDir: 'app',
-                title: 'CodeWizard',
+                title: 'Data Science and AI Engineer',
                 brand: 'agnishwarraychaudhuri',
             }
         }
