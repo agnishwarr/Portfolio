@@ -12,10 +12,12 @@ const ui = useUiStore();
   <v-main>
     <HogwartsProjectParallax />
     <v-container class="mt-md-5">
+      <!-- Page Title -->
       <h2 class="my-6 text-h5 text-sm-h5 text-md-h4 text-lg-h4">
         {{ project.content.title }}
       </h2>
 
+      <!-- Intro Paragraphs -->
       <p
         class="my-5 text-body-1 text-sm-h6 text-md-h6 text-lg-h6"
         v-for="(description, index) in project.content.description"
@@ -28,7 +30,7 @@ const ui = useUiStore();
         {{ description }}
       </p>
 
-      <!-- ✅ Loop through projects and render a card for each -->
+      <!-- Project Cards -->
       <v-row dense>
         <v-col
           v-for="(item, index) in project.content.list"
@@ -46,4 +48,8 @@ const ui = useUiStore();
 </template>
 
 <style scoped>
+/* ✅ Make all non-heading text Times New Roman, even inside child components */
+:deep(*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)) {
+  font-family: "Times New Roman", Times, serif !important;
+}
 </style>

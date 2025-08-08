@@ -11,7 +11,7 @@ export const useProjectStore = defineStore('project', {
                 location: './images/wands.jpg'
             }
         },
-         content: {
+        content: {
             title: 'Projects',
             description: [
                 'Welcome to my portfolio of AI and data science projects — a curated collection of real-world solutions built with machine learning, statistical modeling, and intelligent automation.',
@@ -20,83 +20,80 @@ export const useProjectStore = defineStore('project', {
             ],
             list: [
                 {
-                    title: 'Type 2 Diabetes Prediction with Stacked ML Models',
-                    summary: 'Built a predictive framework using Random Forest and XGBoost to diagnose diabetes based on clinical and behavioral data. Behavioral features accounted for 72% of prediction power.',
-                    tech: ['Python', 'Scikit-learn', 'XGBoost', 'TensorFlow', 'Pandas', 'NumPy'],
+                    title: 'A Stacked Machine Learning Framework for Type 2 Diabetes Prediction Using Clinical and Behavioral Data',
+                    summary: 'A predictive model for early detection of Type 2 Diabetes Mellitus using a stacked ensemble approach that integrates behavioral and clinical health data.',
+                    tech: ['Python', 'Scikit-learn', 'TensorFlow', 'XGBoost', 'Pandas', 'NumPy'],
                     highlights: [
-                        'Stacked ensemble with Random Forest (BRFSS) + XGBoost (PIMA & FGHDD)',
-                        'Meta-level XGBoost for final prediction',
-                        'Achieved 89% accuracy on test data',
-                        'Real-world integration of heterogeneous datasets'
+                        'Random Forest on behavioral data (BRFSS)',
+                        'XGBoost on clinical data (PIMA & FGHDD)',
+                        'Meta-level XGBoost classifier for final prediction',
+                        'Achieved 89% overall accuracy',
+                        'Behavioral features contributed 72% to predictions',
+                        'Combines heterogeneous data sources for holistic diagnosis'
                     ]
                 },
                 {
                     title: 'Mean Time To Failure of a Coherent System',
-                    summary: 'Modeled reliability of a standby-enabled coherent system using analytical and simulation-based techniques.',
-                    tech: ['MATLAB', 'Python', 'NumPy', 'SciPy'],
+                    summary: 'Analyzes a special coherent system with exchangeable components where, upon system failure, a standby component activates to restore functionality with the remaining operational components.',
+                    tech: ['MATLAB', 'Python', 'SciPy', 'NumPy'],
                     highlights: [
-                        'Probability-based system failure modeling',
-                        'Simulated multiple reliability scenarios',
-                        'Applied concepts from reliability engineering',
-                        'Statistical validation with synthetic data'
+                        'Calculates and models system failure probability',
+                        'Implements statistical methods to evaluate reliability',
+                        'Simulates different failure scenarios for system assessment'
                     ]
                 },
                 {
                     title: 'Automated Credit Scoring System using ML',
-                    summary: 'Designed and deployed a credit scoring web app using a Random Forest model with real-time score generation and secure user interface.',
-                    tech: ['MERN Stack', 'Python', 'Docker', 'Jenkins', 'Scikit-learn'],
+                    summary: 'A web-based application that uses machine learning to automate credit scoring by analyzing financial and behavioral data to predict creditworthiness for financial institutions and individual users.',
+                    tech: ['MERN Stack', 'Python', 'Scikit-learn', 'Pandas', 'Docker', 'Jenkins'],
                     highlights: [
-                        'Real-time prediction based on 10 financial & behavioral features',
-                        'CI/CD integrated for production deployment',
-                        'User-friendly frontend with dashboards',
-                        'Secure data handling and user authentication'
+                        'Real-time credit score computation based on multiple data inputs',
+                        'Secure authentication and user data encryption',
+                        'Interactive dashboards for financial insights'
                     ]
                 },
                 {
-                    title: 'Metaheuristic Solutions for Traveling Salesman Problem',
-                    summary: 'Implemented and compared Ant Colony Optimization, Simulated Annealing, and Genetic Algorithm to solve TSP on Indian cities.',
-                    tech: ['Python', 'NetworkX', 'SciPy', 'Matplotlib'],
+                    title: 'Application of Metaheuristic Optimization Techniques to Solve TSP',
+                    summary: 'Implements Ant Colony Optimization, Simulated Annealing, and Genetic Algorithm approaches to solve the Traveling Salesman Problem and compares the performance of each method.',
+                    tech: ['Python', 'NetworkX', 'Matplotlib', 'SciPy'],
                     highlights: [
-                        'Custom-built algorithms from scratch',
-                        'Benchmarked solution efficiency & convergence',
-                        'Visualized optimal paths across multiple runs',
-                        'Evaluated time-performance tradeoffs'
+                        'Benchmarks multiple optimization techniques',
+                        'Visualizes the best path found by each algorithm',
+                        'Performance comparison with real-world datasets'
                     ]
                 },
                 {
-                    title: 'AI Deep Q-Learning Agent for Lunar Landing',
-                    summary: 'Developed a Deep Q-Learning (DQN) agent to solve the Lunar Lander task using Gymnasium and PyTorch.',
-                    tech: ['Python', 'PyTorch', 'Gymnasium', 'NumPy', 'Matplotlib'],
+                    title: 'AI Deep Q-Learning for Lunar Landing',
+                    summary: 'This project implements a Deep Q-Learning (DQN) agent to solve the Lunar Lander environment from Gymnasium, allowing an AI model to autonomously land a spaceship on the moon.',
+                    tech: ['Python', 'PyTorch', 'Gymnasium', 'NumPy', 'Collections', 'Matplotlib', 'PIL'],
                     highlights: [
-                        'Custom neural network-based Q-agent',
-                        'Replay buffer, target network for stability',
-                        'Epsilon-greedy policy for exploration/exploitation',
-                        'Improved reward over 1000+ training episodes'
+                        'Environment Simulation: The Lunar Lander environment simulates a spacecraft attempting to land on the lunar surface with rewards for successful landing and penalties for crashing',
+                        'DQN Agent: Utilizes a neural network to approximate the optimal Q-function, determining the best actions for the AI model',
+                        'Experience Replay: Stores and learns from past experiences using a memory buffer to improve training stability',
+                        'Target Network: A separate target network helps stabilize training by periodically updating its parameters',
+                        'Exploration-Exploitation Balance: Uses an epsilon-greedy strategy to shift behavior from exploration to exploitation over time',
+                        'Training Process: The agent is trained over multiple episodes, gradually improving its landing performance through reinforcement learning'
                     ]
                 },
                 {
-                    title: 'AI-Powered Travel Planner with Streamlit',
-                    summary: 'An NLP-based app that creates custom itineraries and emails them to users. Demonstrates prompt engineering, automation, and UX.',
-                    tech: ['Python', 'Streamlit', 'LangChain', 'OpenAI API', 'SMTP', 'Jinja2'],
+                    title: 'Agentic AI Travel Planner',
+                    summary: 'This project is an AI-powered travel itinerary planner built with Streamlit that creates day-wise trip plans based on user input and optionally emails them. It demonstrates the modular integration of AI capabilities and automation in a real-world utility app.',
+                    tech: ['Python', 'Streamlit', 'SMTP', 'dotenv', 'Jinja2', 'LangChain', 'OpenAI API'],
                     highlights: [
-                        'Collects user preferences and auto-generates multi-day plans',
-                        'Email delivery via secure Gmail App Passwords',
-                        'Built-in modularity for PDF export & maps',
-                        'Lightweight, deployable with no external DB'
+                        'User Input Interface: A simple and intuitive form where users can input their travel destination and trip duration',
+                        'Itinerary Generator: Uses prompt templates to generate travel plans',
+                        'Email Delivery: Automatically sends the generated itinerary to the user\'s email using secure Gmail App Passwords',
+                        'Modular Design: Built for easy extension — additional features like PDF export and map embedding are available but disabled by default',
+                        'Secure & Lightweight: Only requires a Gmail account with 2FA and app password to function; AI services are optional',
+                        'Streamlit App UI: A lightweight frontend built with Streamlit, offering instant deployment capability on local or cloud platforms'
                     ]
                 }
             ]
         },
-        footer: {
-
-        }
+        footer: {}
     }),
 
-    getters: {
+    getters: {},
 
-    },
-
-    actions: {
-
-    },
+    actions: {}
 });
