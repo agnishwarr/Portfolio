@@ -8,8 +8,15 @@
       </div>
 
       <!-- Back -->
-      <div class="flip-card-back">
-        <v-card flat class="pa-4" color="rgb(30, 30, 30)">
+      <div
+        class="flip-card-back"
+        :class="ui.getTheme === 'dark' ? 'dark-mode' : 'light-mode'"
+      >
+        <v-card
+          flat
+          class="pa-4"
+          :color="ui.getTheme === 'dark' ? '#1e1e1e' : '#ffffff'"
+        >
           <v-card-subtitle class="mb-3 text-wrap">
             {{ project.summary }}
           </v-card-subtitle>
@@ -47,16 +54,18 @@
 </template>
 
 <script setup>
+import { useUiStore } from "@/stores/store-ui";
 defineProps({
   project: Object
 });
+const ui = useUiStore();
 </script>
 
 <style scoped>
 .flip-card {
   background-color: transparent;
   width: 100%;
-  height: 480px; /* Increased height for full description */
+  height: 480px;
   perspective: 1200px;
 }
 
@@ -72,7 +81,6 @@ defineProps({
   transform: rotateY(180deg);
 }
 
-/* Front & back */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -81,9 +89,8 @@ defineProps({
   backface-visibility: hidden;
 }
 
-/* Front design */
 .flip-card-front {
-  background: linear-gradient(135deg, #2c3e50, #1a252f); /* Clean dark gradient */
+  background: linear-gradient(135deg, #2c3e50, #1a252f);
   color: white;
   display: flex;
   justify-content: center;
@@ -97,16 +104,26 @@ defineProps({
   text-align: center;
   font-weight: bold;
   line-height: 1.4;
+  font-family: "Times New Roman", Times, serif;
 }
 
-/* Back design */
 .flip-card-back {
   transform: rotateY(180deg);
-  background: rgb(30, 30, 30);
-  color: white;
   border-radius: 12px;
-  overflow-y: auto; /* Scroll if content is still longer */
+  overflow-y: auto;
   padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Light and Dark mode styles */
+.flip-card-back.light-mode {
+  background-color: #ffffff;
+  color: black;
+}
+
+.flip-card-back.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
 }
 
 .text-wrap {
