@@ -18,7 +18,13 @@ export const useHomeStore = defineStore('home', {
                 'Hi, I\'m Agnishwar Raychaudhuri — a results-driven and technically versatile individual with a strong foundation in data science, machine learning, and AI-driven application development. My work focuses on predictive modeling, optimization algorithms, and intelligent automation to drive meaningful impact in domains like healthcare, finance, and travel.',
                 'I’m currently pursuing a BTech in Data Science at NIIT University and actively enhancing my expertise in augmented analytics and cloud-native data science frameworks. I enjoy building scalable AI-ML solutions that bridge the gap between data and decision-making, and I’m always eager to explore cutting-edge techniques in machine learning and intelligent systems.',
                 'Passionate about AI, ML, and all things data · Open to collaborations on innovative tech projects · Happy to chat about algorithms, analytics, or anything data-driven · Fun fact: I juggle AI research, quiz competitions, and panel talks — all while coding like a pro!'
-            ]
+            ],
+            skills: {
+                languages: ['Python', 'Java', 'SQL', 'JavaScript'],
+                frameworks_libraries: ['Scikit-learn', 'Pandas', 'NumPy', 'Flask', 'Hadoop', 'OpenCV'],
+                tools: ['MySQL', 'Docker', 'Jenkins', 'Power BI', 'MongoDB', 'HDFS', 'Canva', 'VS Code'],
+                platforms: ['GitHub', 'Kaggle', 'Google Colab', 'Microsoft Office', 'Asana', 'Jira']
+            }
         },
         footer: {
 
