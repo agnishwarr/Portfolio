@@ -12,11 +12,7 @@
         class="flip-card-back"
         :class="ui.getTheme === 'dark' ? 'dark-mode' : 'light-mode'"
       >
-        <v-card
-          flat
-          class="pa-4"
-          :color="ui.getTheme === 'dark' ? '#1e1e1e' : '#ffffff'"
-        >
+        <v-card flat class="pa-4 back-card">
           <v-card-subtitle class="mb-3 text-wrap">
             {{ project.summary }}
           </v-card-subtitle>
@@ -40,7 +36,9 @@
               :key="i"
               class="py-1"
             >
-              <v-icon size="16" class="me-2" color="green">mdi-check-circle</v-icon>
+              <v-icon size="16" class="me-2" color="green">
+                mdi-check-circle
+              </v-icon>
               <v-list-item-title class="text-body-2 text-wrap">
                 {{ point }}
               </v-list-item-title>
@@ -65,15 +63,15 @@ const ui = useUiStore();
 .flip-card {
   background-color: transparent;
   width: 100%;
-  height: 480px;
-  perspective: 1200px;
+  height: 500px; /* slightly taller */
+  perspective: 1500px;
 }
 
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  transition: transform 0.8s ease-in-out;
   transform-style: preserve-3d;
 }
 
@@ -87,43 +85,48 @@ const ui = useUiStore();
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+/* Front design */
 .flip-card-front {
-  background: linear-gradient(135deg, #2c3e50, #1a252f);
+  background: linear-gradient(135deg, #34495e, #2c3e50);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border-radius: 12px;
 }
 
 .project-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
   line-height: 1.4;
   font-family: "Times New Roman", Times, serif;
 }
 
+/* Back design */
 .flip-card-back {
   transform: rotateY(180deg);
-  border-radius: 12px;
   overflow-y: auto;
-  padding: 0;
   font-family: "Times New Roman", Times, serif;
 }
 
-/* Light and Dark mode styles */
 .flip-card-back.light-mode {
-  background-color: #ffffff;
+  background: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
   color: black;
 }
 
 .flip-card-back.dark-mode {
-  background-color: #1e1e1e;
+  background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
   color: white;
+}
+
+.back-card {
+  background: transparent !important;
+  box-shadow: none;
 }
 
 .text-wrap {
