@@ -9,9 +9,10 @@ const restart = () => {
 </script>
 
 <template>
-    <audio id="backgroundAudio" loop crossOrigin="anonymous">
+    <audio id="backgroundAudio" crossOrigin="anonymous">
         <source src="/music/HedwigsTheme.mp3" type="audio/mp3">
     </audio>
+
     <v-btn
         @click="toggle"
         @dblclick="restart"
