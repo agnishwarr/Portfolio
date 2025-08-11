@@ -20,18 +20,17 @@ export const useContactStore = defineStore('contact', {
                 'I\'m passionate about turning complex data into meaningful insights and building intelligent systems that drive real-world impact. Let\'s explore the future of tech together - from machine learning and NLP to intelligent automation.',
                 'Drop a message and let\'s make innovation happen, one model at a time.'
             ],
-            resume_url: 'https://drive.google.com/file/d/1oj_wKrFnbMp6J-zLMlCgHiavwIqAzbCm/view?usp=drive_link'
+            resume_url: 'https://drive.google.com/file/d/1oj_wKrFnbMp6J-zLMlCgHiavwIqAzbCm/view?usp=drive_link',
+            contact_info: {
+                location: 'Bengaluru, Karnataka',
+                phone: '9739899241',
+                email: 'agnishwar73@gmail.com'
+            }
         },
-        footer: {
-
-        }
+        footer: {}
     }),
 
-    getters: {
+    getters: {},
 
-    },
-
-    actions: {
-
-    },
+    actions: {}
 });
