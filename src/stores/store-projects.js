@@ -88,7 +88,21 @@ export const useProjectStore = defineStore('project', {
                         'Streamlit App UI: A lightweight frontend built with Streamlit, offering instant deployment capability on local or cloud platforms'
                     ]
                 }
-            ]
+            ],
+            experience: {
+                title: 'Experience',
+                roles: [
+                    {
+                        position: 'Teaching Assistant – Learning and Pedagogy Desk',
+                        organization: 'Centre of Excellence in Education Technology (CoEET), NIIT University',
+                        period: 'Jan 2023 – May 2024',
+                        responsibilities: [
+                            'Designing and implementing structured guidelines, role responsibilities, and evaluation rubrics for 10+ university-level projects, supporting over 100 students throughout the semester.',
+                            'Conducting 7 multimedia-based training sessions to enhance student engagement, improve clarity in project expectations, and drive measurable improvements in learning outcomes.'
+                        ]
+                    }
+                ]
+            }
         },
         footer: {}
     }),
