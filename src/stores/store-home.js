@@ -6,7 +6,7 @@ export const useHomeStore = defineStore('home', {
         slug: '',
         header: {
             title: 'Welcome to Agnishwar Raychaudhuri\'s AI & Data Science Hub',
-            subtitle: 'Transforming data into decisions, one model at a time',
+            subtitle: '',
             action: 'Explore My Work',
             parallax: {
                 location: './images/journey.jpg'
