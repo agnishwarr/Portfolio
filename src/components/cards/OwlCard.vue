@@ -2,26 +2,26 @@
 import { ref } from "vue";
 
 let snackbar = ref(false);
-
-defineProps({
-  contact: {
-    type: Object
-  }
-});
 </script>
 
 <template>
   <form
-    action="https://formsubmit.co/agnishwar73@gmail.com"
+    name="contact"
     method="POST"
+    data-netlify="true"
     @submit.prevent="
       snackbar = true;
       $el.submit();
     "
   >
+    <!-- Required hidden input for Netlify -->
+    <input type="hidden" name="form-name" value="contact" />
+
     <v-card class="mt-lg-3" variant="tonal">
-      <v-card-title class="my-3 my-md-6 my-lg-6 text-h5 text-sm-h5 text-md-h4 text-lg-h4 px-6">
-        {{ contact.content.card_title }}
+      <v-card-title
+        class="my-3 my-md-6 my-lg-6 text-h5 text-sm-h5 text-md-h4 text-lg-h4 px-6"
+      >
+        Send me a message
         <v-icon>mdi-owl</v-icon>
       </v-card-title>
 
@@ -60,14 +60,6 @@ defineProps({
               required
             />
           </v-col>
-
-          <!-- Optional Hidden Fields -->
-          <input type="hidden" name="_captcha" value="false" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://yourdomain.com/thank-you"
-          />
         </v-row>
       </v-card-text>
 
