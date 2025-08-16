@@ -6,16 +6,17 @@ let snackbar = ref(false);
 
 <template>
   <form
-    name="contact"
+    action="https://formsubmit.co/agnishwar73@gmail.com"
     method="POST"
-    data-netlify="true"
-    @submit.prevent="
-      snackbar = true;
-      $el.submit();
-    "
+    @submit="snackbar = true"
   >
-    <!-- Required hidden input for Netlify -->
-    <input type="hidden" name="form-name" value="contact" />
+    <!-- FormSubmit hidden configs -->
+    <input type="hidden" name="_captcha" value="false" />
+    <input
+      type="hidden"
+      name="_next"
+      value="https://agnishwarraychaudhuri.netlify.app/thank-you"
+    />
 
     <v-card class="mt-lg-3" variant="tonal">
       <v-card-title
@@ -70,6 +71,7 @@ let snackbar = ref(false);
       </v-card-actions>
     </v-card>
 
+    <!-- Snackbar confirmation -->
     <v-snackbar v-model="snackbar" timeout="3000">
       <v-icon>mdi-book-alert</v-icon>
       Your message is flying with the owl! ✉️🦉
