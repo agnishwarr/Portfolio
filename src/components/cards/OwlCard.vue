@@ -5,23 +5,21 @@ let snackbar = ref(false);
 </script>
 
 <template>
-  <form
-    action="https://formsubmit.co/agnishwar73@gmail.com"
-    method="POST"
+  <form 
+    name="contact" 
+    method="POST" 
+    data-netlify="true" 
+    netlify-honeypot="bot-field"
     @submit="snackbar = true"
   >
-    <!-- FormSubmit hidden configs -->
-    <input type="hidden" name="_captcha" value="false" />
-    <input
-      type="hidden"
-      name="_next"
-      value="https://agnishwarraychaudhuri.netlify.app/thank-you"
-    />
+    <!-- Hidden input required for Netlify -->
+    <input type="hidden" name="form-name" value="contact" />
+    <p style="display:none">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
 
     <v-card class="mt-lg-3" variant="tonal">
-      <v-card-title
-        class="my-3 my-md-6 my-lg-6 text-h5 text-sm-h5 text-md-h4 text-lg-h4 px-6"
-      >
+      <v-card-title class="my-3 my-md-6 my-lg-6 text-h5 px-6">
         Send me a message
         <v-icon>mdi-owl</v-icon>
       </v-card-title>
@@ -29,37 +27,16 @@ let snackbar = ref(false);
       <v-card-text align="center" class="px-6">
         <v-row>
           <v-col cols="12" sm="6">
-            <v-text-field
-              variant="underlined"
-              label="First Name"
-              name="first_name"
-              required
-            />
+            <v-text-field label="First Name" name="first_name" required variant="underlined" />
           </v-col>
           <v-col cols="12" sm="6">
-            <v-text-field
-              variant="underlined"
-              label="Last Name"
-              name="last_name"
-              required
-            />
+            <v-text-field label="Last Name" name="last_name" required variant="underlined" />
           </v-col>
           <v-col cols="12">
-            <v-text-field
-              variant="underlined"
-              label="Email"
-              name="email"
-              type="email"
-              required
-            />
+            <v-text-field label="Email" name="email" type="email" required variant="underlined" />
           </v-col>
           <v-col cols="12">
-            <v-textarea
-              variant="underlined"
-              label="Message"
-              name="message"
-              required
-            />
+            <v-textarea label="Message" name="message" required variant="underlined" />
           </v-col>
         </v-row>
       </v-card-text>
@@ -71,7 +48,6 @@ let snackbar = ref(false);
       </v-card-actions>
     </v-card>
 
-    <!-- Snackbar confirmation -->
     <v-snackbar v-model="snackbar" timeout="3000">
       <v-icon>mdi-book-alert</v-icon>
       Your message is flying with the owl! ✉️🦉
